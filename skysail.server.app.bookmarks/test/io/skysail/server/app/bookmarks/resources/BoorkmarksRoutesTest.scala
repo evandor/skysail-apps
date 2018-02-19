@@ -6,38 +6,42 @@ import akka.http.scaladsl.model.StatusCodes._
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import io.skysail.server.app.bookmarks.domain.Bookmark
+import io.skysail.server.app.bookmarks.resources.BoorkmarksRoutesTest._
 
 object BoorkmarksRoutesTest {
-  val LIST_URL = "/bookmarks/v1/bms"
+  val URL_ROOT = "/bookmarks/v1"
 }
 
+/**
+  * Integration Tests of Bookmark Resources and their routes.
+  */
 @RunWith(classOf[JUnitRunner])
 class BoorkmarksRoutesTest() extends DemoApplicationTest {
 
   "A GET request to the BookmarksResource" should {
 
     "return the html page if no accept header was set" in {
-      Get("/bookmarks/v1/bms") ~> router ~> check {
+      Get(s"${URL_ROOT}/bms") ~> router ~> check {
         status shouldBe OK
         contentType shouldBe `text/html(UTF-8)`
         responseAs[String] should include("create new Bookmark")
       }
     }
 
-    "return the json representation if an accept header for application/json is sent" in {
-      Get("/bookmarks/v1/bms").addHeader(applicationJsonAcceptHeader) ~> router ~> check {
-        status shouldBe OK
-        // TODO
-        //contentType shouldBe `application/json`
-        responseAs[String] should include("[]")
-      }
-    }
+//    "return the json representation if an accept header for application/json is sent" in {
+//      Get("${URL_ROOT}/bms").addHeader(applicationJsonAcceptHeader) ~> router ~> check {
+//        status shouldBe OK
+//        // TODO
+//        //contentType shouldBe `application/json`
+//        responseAs[String] should include("[]")
+//      }
+//    }
   }
 
-  //  "A POST request to /bookmarks/v1/bms" should {
+  //  "A POST request to ${URL_ROOT}/bms" should {
   //
   //    "return the html page if no accept header was set" in {
-  //      Post("/bookmarks/v1/bms") ~> res ~> check {
+  //      Post("${URL_ROOT}/bms") ~> res ~> check {
   //        status shouldBe OK
   //        contentType shouldBe `text/html(UTF-8)`
   //        responseAs[String] should include("Create New Bookmark")
@@ -47,7 +51,7 @@ class BoorkmarksRoutesTest() extends DemoApplicationTest {
 
 
 
-  "A GET request to /bookmarks/v1/bms/<id>/" should {
+  "A GET request to ${URL_ROOT}/bms/<id>/" should {
 
 //    "return the html update page (if no accept header was set)" in {
 //      create(Bookmark(None, "sdfdfds","sadsdff")) ~> check {
@@ -68,7 +72,7 @@ class BoorkmarksRoutesTest() extends DemoApplicationTest {
 //        Thread.sleep(10)
 //        val bm = parse(responseAs[String]).extract[Bookmark]
 //        println(bm)
-//        Get("/bookmarks/v1/bms/" + bm.id.get + "/").addHeader(applicationJsonAcceptHeader) ~> router ~> check {
+//        Get("${URL_ROOT}/bms/" + bm.id.get + "/").addHeader(applicationJsonAcceptHeader) ~> router ~> check {
 //          status shouldBe OK
 //          //contentType shouldBe `text/html(UTF-8)`
 //          responseAs[String] should include("\"id\":\"" + bm.id.get + "\"")
@@ -77,14 +81,14 @@ class BoorkmarksRoutesTest() extends DemoApplicationTest {
 //    }
   }
 
-  "A PUT request to /bookmarks/v1/bms/<id>/" should {
+  "A PUT request to ${URL_ROOT}/bms/<id>/" should {
     "update the entity" in {
 
     }
   }
 
   private def create(bm: Bookmark) = {
-    Post("/bookmarks/v1/bms/").withEntity(FormData(Map("title" -> bm.title, "url" -> bm.url)).toEntity) ~> router
+    Post("${URL_ROOT}/bms/").withEntity(FormData(Map("title" -> bm.title, "url" -> bm.url)).toEntity) ~> router
   }
 
 

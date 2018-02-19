@@ -3,7 +3,7 @@
 *                                   *
 * @param msg The message to display *
 *************************************@
-@(rep: RepresentationModel, response: ResponseEventBase, o:Object)
+@(rep: RepresentationModel, response: ResponseEventBase, bm: io.skysail.server.app.bookmarks.domain.Bookmark)
 
 @main(response) {
 
@@ -16,26 +16,22 @@
         <span>@rep.rawData</span>
         <form action='.?_method=PUT' method="POST">
 
-            <table class="table table-sm">
-                <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Url</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row"><input type="text" name="title" value='@rep.rawData.head.get("title")'/></th>
-                    <td><input type="url" name="url" value='@rep.rawData.head.get("url")'/></td>
-                </tr>
-                <tr>
-                    <th colspan="2">
-                        <input type="submit">
-                    </th>
-                </tr>
-                </tbody>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text"  class="form-control" id="title" name="title" placeholder="(Optional) Title" value="@bm.title">
+            </div>
+            <div class="form-group">
+                <label for="url">URL</label>
+                <input type="text"  class="form-control" id="title" name="url" value="@bm.url">
+            </div>
+            <div class="form-group">
+                <label for="url">Created</label>
+                <input type="text"  class="form-control-plaintext" id="url" name="url" placeholder="URL" value="@bm.created">
+            </div>
+            <div class="form-group">
+                <input type="submit">
+            </div>
 
-            </table>
         </form>
 
         <hr>

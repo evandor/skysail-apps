@@ -18,53 +18,22 @@
     <div class="starter-template">
         <h1><a href="/bookmarks/v1/bms">Bookmarks</a> &gt; @rep.rawData.head.get("id")</h1>
         <p class="lead">show bookmark:</p>
-        <div>@rep.rawData</div>
-        <hr>
-        <div>@rep.response.entity</div>
-        <hr>
-        <div>@rep.jsonData</div>
-        <hr>
-        <div>@rep.json</div>
-        <table class="table table-sm">
-            <thead>
-            <tr>
-                <th>Title</th>
-                <th>Url</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row"><input type="text" name="title" value='@rep.rawData.head.get("title")'/></th>
-                <td><input type="url" name="url" value='@rep.rawData.head.get("url")'/></td>
-            </tr>
 
-            <tr>
-                <th colspan="2">
-                    <a href='#'>@render(rep.jsonData)</a>
-                </th>
-            </tr>
-
-            @for(p <- rep.rawData(0).get("variants")) {
-              @for(q <- p.asInstanceOf[List[_]]) {
-                  <tr>
-                    <th colspan="2">
-                      <a href='@q.asInstanceOf[Map[String,_]]("url")'>@q.asInstanceOf[Map[String,_]]("url")</a>
-                    </th>
-                  </tr>
-              }
-            }
-            <tr>
-                <th colspan="2">
-                    <a href='@rep.rawData.head.get("id")/'>edit bookmark</a>
-                </th>
-            </tr>
-            </tbody>
-
-        </table>
-
-        yyyyy
-        <dom-element json="@rep.jsonData"></dom-element>
-
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text"  class="form-control-plaintext" id="title" name="title" aria-describedby="emailHelp" placeholder="(Optional) Title" value="@bm.title">
+        </div>
+        <div class="form-group">
+            <label for="url">URL</label>
+            <a href="@bm.url">@bm.url</a>
+        </div>
+        <div class="form-group">
+            <label for="url">Created</label>
+            <input type="text"  class="form-control-plaintext" id="url" name="url" placeholder="URL" value="@bm.created">
+        </div>
+        <div class="form-group">
+            <a href="./@bm.id.get/">update</a>
+        </div>
 
     </div>
 </div>

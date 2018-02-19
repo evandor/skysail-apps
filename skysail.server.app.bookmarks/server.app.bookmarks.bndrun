@@ -9,6 +9,10 @@
 -runsystemcapabilities: ${native_capability}
 -runsystempackages: ${runsystempackages}
 -runproperties: ${runproperties},\
+    https.proxyHost=192.168.11.140,\
+	https.proxyPort=8080,\
+    http.proxyHost=192.168.11.140,\
+	http.proxyPort=8080,\
     config.file=config/application.conf
 
 -resolve.effective: active;skip:="osgi.service"

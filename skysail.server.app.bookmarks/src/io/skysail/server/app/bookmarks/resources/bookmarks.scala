@@ -15,6 +15,8 @@ import io.skysail.server.app.bookmarks.services.BookmarksService
 
 class BookmarksResource extends EntityResource[BookmarksApplication, BookmarkList] {
   override def getEntity(re: RequestEvent) = Some(BookmarkList(getApplication().repo.find()))
+
+  override def put(requestEvent: RequestEvent)(implicit system: ActorSystem): Unit = ???
 }
 
 class PostBookmarkResource extends PostResource[BookmarksApplication, Bookmark] {
@@ -39,6 +41,8 @@ class PostBookmarkResource extends PostResource[BookmarksApplication, Bookmark] 
       super.createRoute(applicationActor, processCommand.copy(entity = entity))
     }
   }
+  override def put(requestEvent: RequestEvent)(implicit system: ActorSystem): Unit = ???
+
 }
 
 class PutBookmarkResource extends PutResource[BookmarksApplication, Bookmark] {
@@ -100,6 +104,10 @@ class BookmarkResource extends EntityResource[BookmarksApplication, Bookmark] {
     Some(bm)
     //}
   }
+
+  override def put(requestEvent: RequestEvent)(implicit system: ActorSystem): Unit = ???
+
+
 
 
 }

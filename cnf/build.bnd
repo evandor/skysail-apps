@@ -16,16 +16,23 @@
 		name = Release; \
 		pretty = true; \
 		local = ${build}/release
-		
--plugin.4.SkysailServer: \
+
+-plugin.4.SkysailServerWS: \
+    aQute.bnd.repository.osgi.OSGiRepository; \
+        name=SkysailServerWS; \
+        locations=file:/C:/Users/graefca/.bnd/shared/skysail/index.xml.gz
+      
+-plugin.5.SkysailServer: \
 	aQute.bnd.deployer.repository.FixedIndexedRepo; \
 		name = SkysailServer; \
 		pretty = true; \
 		locations=https://raw.githubusercontent.com/evandor/skysail-server/release/0.0/cnf/local/index.xml
 		
-# ; \
-#        name=Skysail Framework Master Hub; \
-#        ; \		
+-plugin.6.SkysailServerReleases: \
+	aQute.bnd.deployer.repository.FixedIndexedRepo; \
+		name = SkysailServerReleases; \
+		pretty = true; \
+		locations=https://raw.githubusercontent.com/evandor/skysail-server/release/0.0/cnf/release/index.xml
 
 -releaserepo: Release
 -baselinerepo: Release
@@ -46,7 +53,7 @@ akka.version                      '[2.5.8,2.6)'
 akka.http.version                 '[10.0.10,10.1)'
 
 skysail.api.version               '[1.0.0,1.0.1)'
-skysail.domain.version            '[1.1.0,1.1.1)'
+skysail.domain.version            '[2.0.0,2.0.1)'
 skysail.server.version            '[0.1.0,0.1.1)'
 skysail.db.orientdb.version       '[0.1.0,0.1.1)'
 skysail.server.auth.basic         '[0.1.0,0.1.1)'

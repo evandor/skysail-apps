@@ -1,5 +1,6 @@
 package io.skysail.server.app.appboard
 
+import akka.actor.ActorSystem
 import io.skysail.domain.{RequestEvent, ResponseEventBase}
 import io.skysail.domain.app.{Application, ApplicationList}
 import io.skysail.domain.resources.EntityResource
@@ -21,4 +22,6 @@ class AppsResource() extends EntityResource[AppboardApplication, ApplicationList
   }
 
   override def delete(requestEvent: RequestEvent): ResponseEventBase = null
+
+  override def put(requestEvent: RequestEvent)(implicit system: ActorSystem): Unit = ???
 }

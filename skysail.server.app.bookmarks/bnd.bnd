@@ -32,7 +32,6 @@ Build-Version: ${buildVersion}
 	com.typesafe.akka.http.jackson;version=10.0,\
 	org.scala-lang.modules.scala-xml;version='[1.0.6,1.0.7)',\
 	com.thoughtworks.paranamer;version='[2.8.0,2.8.1)',\
-	com.typesafe.akka.http.spray.json;version=10.0,\
 	io.spray.json;version=1.3,\
 	org.apache.felix.fileinstall;version=3.6.4,\
 	org.apache.felix.eventadmin;version=1.4,\

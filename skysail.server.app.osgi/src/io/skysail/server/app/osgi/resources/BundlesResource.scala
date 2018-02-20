@@ -1,5 +1,6 @@
 package io.skysail.server.app.osgi.resources
 
+import akka.actor.ActorSystem
 import io.skysail.domain.resources.EntityResource
 import io.skysail.domain.{RequestEvent, ResponseEventBase}
 import io.skysail.server.app.osgi.OsgiApplication
@@ -15,4 +16,6 @@ class BundlesResource extends EntityResource[OsgiApplication, BundleDescriptorLi
   }
 
   override def get(requestEvent: RequestEvent): ResponseEventBase = ???
+  override def put(requestEvent: RequestEvent)(implicit system: ActorSystem): Unit = ???
+
 }

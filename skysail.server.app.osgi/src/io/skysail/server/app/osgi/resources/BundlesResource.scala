@@ -16,6 +16,6 @@ class BundlesResource extends EntityResource[OsgiApplication, BundleDescriptorLi
   }
 
   override def get(requestEvent: RequestEvent): ResponseEventBase = ???
-  override def put(requestEvent: RequestEvent)(implicit system: ActorSystem): Unit = ???
+  override def put(requestEvent: RequestEvent)(implicit system: ActorSystem): ResponseEventBase = ???
 
 }

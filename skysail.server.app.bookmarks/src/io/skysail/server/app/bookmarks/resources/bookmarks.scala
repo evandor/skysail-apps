@@ -15,8 +15,6 @@ import io.skysail.server.app.bookmarks.services.BookmarksService
 
 class BookmarksResource extends EntityResource[BookmarksApplication, BookmarkList] {
   override def getEntity(re: RequestEvent) = Some(BookmarkList(getApplication().repo.find()))
-
-  override def put(requestEvent: RequestEvent)(implicit system: ActorSystem): Unit = ???
 }
 
 class PostBookmarkResource extends PostResource[BookmarksApplication, Bookmark] {
@@ -25,14 +23,14 @@ class PostBookmarkResource extends PostResource[BookmarksApplication, Bookmark] 
     ResponseEvent(requestEvent, Bookmark(None, "", ""))
   }
 
-  def post(requestEvent: RequestEvent) {
+  def post(requestEvent: RequestEvent)(implicit actorSystem: ActorSystem): ResponseEventBase = {
     var bookmark = requestEvent.cmd.entity.asInstanceOf[Bookmark]
     val bmWithMetadata = BookmarksService.addMetadata(bookmark)
     val b = getApplication().repo.save(bmWithMetadata)
     // getApplication().eventService.send("bookmark created")
     val redirectTo = Some("/bookmarks/v1/bms")
     val newRequest = requestEvent.cmd.ctx.request.copy(method = HttpMethods.GET)
-    requestEvent.controllerActor ! RedirectResponseEvent(requestEvent, "", redirectTo)
+    RedirectResponseEvent(requestEvent, "", redirectTo)
   }
 
   override def createRoute(applicationActor: ActorSelection, processCommand: ProcessCommand)(implicit system: ActorSystem): Route = {
@@ -41,8 +39,6 @@ class PostBookmarkResource extends PostResource[BookmarksApplication, Bookmark] 
       super.createRoute(applicationActor, processCommand.copy(entity = entity))
     }
   }
-  override def put(requestEvent: RequestEvent)(implicit system: ActorSystem): Unit = ???
-
 }
 
 class PutBookmarkResource extends PutResource[BookmarksApplication, Bookmark] {
@@ -52,11 +48,12 @@ class PutBookmarkResource extends PutResource[BookmarksApplication, Bookmark] {
     ResponseEvent(requestEvent, optionalBookmark.get)
   }
 
-  override def put(requestEvent: RequestEvent)(implicit system: ActorSystem): Unit = {
+  override def put(requestEvent: RequestEvent)(implicit system: ActorSystem): ResponseEventBase = {
     val optionalBookmark = getApplication().repo.find(requestEvent.cmd.urlParameter.head)
     val updatedBookmark = requestEvent.cmd.entity.asInstanceOf[Bookmark]
     val bookmarkToSave = updatedBookmark.copy(id = optionalBookmark.get.id)
     getApplication().repo.save(bookmarkToSave)
+    null
   }
 
   override def createRoute(applicationActor: ActorSelection, processCommand: ProcessCommand)(implicit system: ActorSystem): Route = {
@@ -104,10 +101,5 @@ class BookmarkResource extends EntityResource[BookmarksApplication, Bookmark] {
     Some(bm)
     //}
   }
-
-  override def put(requestEvent: RequestEvent)(implicit system: ActorSystem): Unit = ???
-
-
-
 
 }

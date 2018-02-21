@@ -13,7 +13,7 @@ case class ReposResource() extends EntityResource[ObrApplication, Repository] {
 
   override def get(requestEvent: RequestEvent): ResponseEventBase = ???
 
-  override def put(requestEvent: RequestEvent)(implicit system: ActorSystem): Unit = ???
+  override def put(requestEvent: RequestEvent)(implicit system: ActorSystem): ResponseEventBase = ???
 }
 
 case class ResourcesResource() extends EntityResource[ObrApplication, Resource] {
@@ -22,5 +22,5 @@ case class ResourcesResource() extends EntityResource[ObrApplication, Resource] 
   override def getEntity(re: RequestEvent): Option[Resource] = ???
 
   override def get(requestEvent: RequestEvent): ResponseEventBase = ???
-  override def put(requestEvent: RequestEvent)(implicit system: ActorSystem): Unit = ???
+  override def put(requestEvent: RequestEvent)(implicit system: ActorSystem): ResponseEventBase = ???
 }

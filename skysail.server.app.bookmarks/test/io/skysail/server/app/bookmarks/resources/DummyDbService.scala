@@ -4,7 +4,7 @@ import io.skysail.api.persistence.DbService
 import io.skysail.domain.model.ApplicationModel
 import io.skysail.server.app.bookmarks.domain.Bookmark
 
-class DummyDbService extends DbService() {
+class DummyDbService extends DbService {
 
   private var bookmarks = scala.collection.mutable.Map[String, Bookmark]()
 
@@ -31,6 +31,10 @@ class DummyDbService extends DbService() {
   }
 
   override def delete[T: Manifest](cls: Class[T], id: String): Boolean = ???
+
+  def findGraphs2[T](template: T, sql: String)(implicit evidence$7: Manifest[T]): List[T] = {
+    ???
+  }
 
   //override def findGraphs2[T: Manifest](template: T, sql: String): List[T] = ???
 }

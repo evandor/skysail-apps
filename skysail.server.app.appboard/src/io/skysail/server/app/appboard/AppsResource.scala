@@ -23,5 +23,5 @@ class AppsResource() extends EntityResource[AppboardApplication, ApplicationList
 
   override def delete(requestEvent: RequestEvent): ResponseEventBase = null
 
-  override def put(requestEvent: RequestEvent)(implicit system: ActorSystem): Unit = ???
+  override def put(requestEvent: RequestEvent)(implicit system: ActorSystem): ResponseEventBase = ???
 }

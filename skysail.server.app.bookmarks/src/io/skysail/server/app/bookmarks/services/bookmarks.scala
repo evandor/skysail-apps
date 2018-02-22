@@ -57,6 +57,10 @@ object BookmarksService {
 
         val links: Elements = v.select("a[href]")
         println ("links: " + links)
+        import scala.collection.JavaConversions._
+        for (link <- links) {
+          print(" * a: <%s>  (%s)", link.attr("abs:href"), link.text)
+        }
 //        for (link: AnyRef <- links.traverse()) {
 //          print(" * a: <%s>  (%s)", link.attr("abs:href"), trim(link.text(), 35)))
 //        }

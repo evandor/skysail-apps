@@ -5,12 +5,13 @@ import java.util.concurrent.TimeUnit
 
 import akka.actor.ActorSystem
 import io.skysail.server.adapter.JSoupAdapter
+import io.skysail.server.app.bookmarks.domain.Bookmark
 import org.jsoup.nodes.Document
+import org.jsoup.select.Elements
 import org.slf4j.LoggerFactory
 
 import scala.concurrent.duration.Duration
-import scala.util.{ Failure, Success, Try }
-import io.skysail.server.app.bookmarks.domain.Bookmark
+import scala.util.{Failure, Success, Try}
 
 object BookmarkSchedulerService {
 
@@ -53,6 +54,14 @@ object BookmarksService {
           bm = bm.copy(favIcon = Some(bookmark.url + favicon.attr("href")))
         }
         bm = bm.copy(hash = generateHash(v))
+
+        val links: Elements = v.select("a[href]")
+        println ("links: " + links)
+//        for (link: AnyRef <- links.traverse()) {
+//          print(" * a: <%s>  (%s)", link.attr("abs:href"), trim(link.text(), 35)))
+//        }
+
+
       case Failure(f) => log info s"problem getting metadata for ${bookmark.url}"
     }
     bm.copy(created = Instant.now.getEpochSecond)

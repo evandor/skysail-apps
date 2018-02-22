@@ -10,7 +10,7 @@ import io.skysail.domain.messages.ProcessCommand
 import io.skysail.domain.resources.{EntityResource, PostResource, PutResource}
 import io.skysail.domain.{RedirectResponseEvent, RequestEvent, ResponseEvent, ResponseEventBase}
 import io.skysail.server.app.bookmarks.BookmarksApplication
-import io.skysail.server.app.bookmarks.domain.{Bookmark, BookmarkList}
+import io.skysail.server.app.bookmarks.domain.{Bookmark, BookmarkList, HttpResource}
 import io.skysail.server.app.bookmarks.services.BookmarksService
 
 class BookmarksResource extends EntityResource[BookmarksApplication, BookmarkList] {

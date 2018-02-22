@@ -20,6 +20,7 @@ case class Bookmark(
                      hash: String = "",
                      created: Long = Instant.MIN.getEpochSecond,
                      clicked: Integer = 0,
+                     root: HttpResource = null,
                      state: Option[State.EnumVal] = Some(State.NEW)
                    ) extends Entity[String] with Linkable {
 
@@ -40,4 +41,3 @@ case class BookmarkList(
     ButtonLink("create-form", "create new Bookmark", "/bookmarks/v1/bms/", style = "btn btn-outline-primary")
   )
 }
-

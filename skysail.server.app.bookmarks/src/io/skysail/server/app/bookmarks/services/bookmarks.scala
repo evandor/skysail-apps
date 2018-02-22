@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit
 
 import akka.actor.ActorSystem
 import io.skysail.server.adapter.JSoupAdapter
-import io.skysail.server.app.bookmarks.domain.Bookmark
+import io.skysail.server.app.bookmarks.domain.{Bookmark, HttpResource}
 import org.jsoup.nodes.Document
 import org.jsoup.select.Elements
 import org.slf4j.LoggerFactory
@@ -43,7 +43,9 @@ object BookmarksService {
   private val log = LoggerFactory.getLogger(this.getClass)
 
   def addMetadata(bookmark: Bookmark) = {
-    var bm = bookmark
+    val root = HttpResource(bookmark.url)
+    var bm = bookmark.copy(root = root)
+
     //.copy()
     val metadata = new JSoupAdapter().readFrom(bookmark.url).asInstanceOf[Try[Document]]
     metadata match {
@@ -56,7 +58,7 @@ object BookmarksService {
         bm = bm.copy(hash = generateHash(v))
 
         val links: Elements = v.select("a[href]")
-        println ("links: " + links)
+        //println ("links: " + links)
         import scala.collection.JavaConversions._
         for (link <- links) {
           print(" * a: <%s>  (%s)", link.attr("abs:href"), link.text)

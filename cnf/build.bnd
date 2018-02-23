@@ -1,3 +1,6 @@
+userhome=file:/C:/Users/graefca
+#userhome=file://${user.home}
+
 # Configure Repositories
 -plugin.1.Local: \
 	aQute.bnd.deployer.repository.LocalIndexedRepo; \
@@ -20,7 +23,7 @@
 -plugin.4.SkysailServerWS: \
     aQute.bnd.repository.osgi.OSGiRepository; \
         name=SkysailServerWS; \
-        locations=file://${user.home}/.bnd/shared/skysail/index.xml.gz
+        locations=${userhome}/.bnd/shared/skysail/index.xml.gz
       
 -plugin.5.SkysailServer: \
 	aQute.bnd.deployer.repository.FixedIndexedRepo; \

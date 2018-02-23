@@ -14,7 +14,7 @@ Bundle-Activator: io.skysail.server.app.appboard.Activator
 -buildpath: \
 	osgi.core;version=${osgi.version},\
     osgi.enterprise;version=5.0,\
-    	osgi.annotation;version=${osgi.annotation.version},\
+    osgi.annotation;version=${osgi.annotation.version},\
 	${akka-build},\
 	domino_2.11;version=1.1,\
 	slf4j.api;version=1.7,\

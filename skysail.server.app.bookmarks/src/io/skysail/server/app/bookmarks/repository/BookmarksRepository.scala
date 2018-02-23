@@ -4,12 +4,16 @@ import java.time.Instant
 
 import io.skysail.api.persistence.DbService
 import io.skysail.domain.model.ApplicationModel
-import io.skysail.server.app.bookmarks.domain.Bookmark
+import io.skysail.server.app.bookmarks.domain.{Bookmark, HttpResource}
 
 class BookmarksRepository (dbService: DbService, appModel: ApplicationModel) {
 
-  dbService.createWithSuperClass("V", DbService.tableNameFor(classOf[Bookmark]))
+  dbService.createWithSuperClass("V",
+    DbService.tableNameFor(classOf[Bookmark]),
+    DbService.tableNameFor(classOf[HttpResource])
+  )
   dbService.register(classOf[Bookmark])
+  dbService.register(classOf[HttpResource])
 
   def save(entity: Any): String = {
     dbService.persist(entity, appModel)

@@ -26,14 +26,15 @@ class BookmarksRepository (dbService: DbService, appModel: ApplicationModel) {
     //                + " " + limitClause(pagination);
     //pagination.setEntityCount(count(filter));
     //println("executing sql " + sql)
-    dbService.findGraphs(classOf[Bookmark], sql) //, filter.getParams());
+    dbService.findGraphs(classOf[Bookmark], sql, appModel) //, filter.getParams());
   }
 
   def find(id: String): Option[Bookmark] = {
     val sql = s"SELECT * from ${DbService.tableNameFor(classOf[Bookmark])} where id='${id}'"
     //println("executing sql " + sql)
     // Bookmark(None, "", "", created = Instant.MIN.getEpochSecond)
-    val res: Seq[Bookmark] = dbService.findGraphs(classOf[Bookmark], sql) //, filter.getParams());
+
+    val res: Seq[Bookmark] = dbService.findGraphs(classOf[Bookmark], sql, appModel) //, filter.getParams());
     if (res.size == 0) None else res.headOption
   }
 

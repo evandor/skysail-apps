@@ -35,12 +35,14 @@ class BookmarksResourceTest(_system: ActorSystem)
 
   when(dbService.findGraphs(
     classOf[Bookmark],
-    "SELECT * from io_skysail_server_app_bookmarks_domain_Bookmark"))
+    "SELECT * from io_skysail_server_app_bookmarks_domain_Bookmark",
+    app.appModel))
     .thenReturn(List(Bookmark(Some("id"), "title", "url")))
 
   when(dbService.findGraphs(
     classOf[Bookmark],
-    "SELECT * from io_skysail_server_app_bookmarks_domain_Bookmark where id='abc'"))
+    "SELECT * from io_skysail_server_app_bookmarks_domain_Bookmark where id='abc'",
+    app.appModel))
     .thenReturn(List(Bookmark(Some("abc"), "title", "url")))
 
   var bmr: BookmarkResource = null

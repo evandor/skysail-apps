@@ -1,5 +1,5 @@
-userhome=file:/C:/Users/graefca
-#userhome=file://${user.home}
+#userhome=file:/C:/Users/graefca
+userhome=file://${user.home}
 
 # Configure Repositories
 -plugin.1.Local: \
@@ -56,7 +56,7 @@ akka.version                      '[2.5.8,2.6)'
 akka.http.version                 '[10.0.10,10.1)'
 
 skysail.domain.version            '[2.0.0,2.0.1)'
-skysail.api.version               '[1.1.0,1.1.1)'
+skysail.api.version               '[2.0.0,2.0.1)'
 skysail.server.version            '[1.0.0,1.0.1)'
 skysail.db.orientdb.version       '[0.1.4,0.1.5)'
 skysail.server.auth.basic         '[0.1.0,0.1.1)'

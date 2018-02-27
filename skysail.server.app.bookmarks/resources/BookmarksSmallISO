@@ -11,7 +11,7 @@
               "meta_info": {
                 "last_visited_desktop": "13152307055209068"
               },
-              "name": "Ugo Sangiorgi - Installing the Eclipse RCP Delta pack (for beginners)",
+              "name": "Ugo Sangiorgi Installing the Eclipse RCP Delta pack (for beginners)",
               "sync_transaction_version": "821",
               "type": "url",
               "url": "http://ugosan.org/eclipse-rcp-delta-pack/"
@@ -195,7 +195,7 @@
                 {
                   "date_added": "13024053562189478",
                   "id": "298",
-                  "name": "How to install compiled programs on a Synology NAS - setaOffice",
+                  "name": "How to install compiled programs on a Synology NAS « setaOffice",
                   "sync_transaction_version": "216",
                   "type": "url",
                   "url": "http://setaoffice.com/2011/04/08/how-to-install-compiled-programs-on-a-synology-nas/"
@@ -251,7 +251,7 @@
                 {
                   "date_added": "13024053562206478",
                   "id": "305",
-                  "name": "git ready - learn git one commit at a time",
+                  "name": "git ready » learn git one commit at a time",
                   "sync_transaction_version": "216",
                   "type": "url",
                   "url": "http://gitready.com/"
@@ -517,7 +517,7 @@
                 {
                   "date_added": "13024053562239478",
                   "id": "187",
-                  "name": "Eclipse Community Forums: GMF (Graphical Modeling Framework) - GMF Diagram without Resource?",
+                  "name": "Eclipse Community Forums: GMF (Graphical Modeling Framework) » GMF Diagram without Resource?",
                   "sync_transaction_version": "216",
                   "type": "url",
                   "url": "http://www.eclipse.org/forums/index.php?t=msg&th=162725&"
@@ -604,7 +604,7 @@
                 {
                   "date_added": "13024053562357478",
                   "id": "198",
-                  "name": "Getting Started - jpathwatch",
+                  "name": "Getting Started « jpathwatch",
                   "sync_transaction_version": "216",
                   "type": "url",
                   "url": "http://jpathwatch.wordpress.com/documentation/getting-started/"
@@ -816,7 +816,7 @@
                 {
                   "date_added": "13024053562483478",
                   "id": "224",
-                  "name": "Equinox - Nirmal's Blog",
+                  "name": "Equinox « Nirmal's Blog",
                   "sync_transaction_version": "216",
                   "type": "url",
                   "url": "http://nirmalsasidharan.wordpress.com/tag/equinox/"
@@ -832,7 +832,7 @@
                 {
                   "date_added": "13024053562490478",
                   "id": "226",
-                  "name": "osgi apps - ekkes-corner: eclipse | osgi | mdsd | erp | mobile",
+                  "name": "osgi apps « ekkes-corner: eclipse | osgi | mdsd | erp | mobile",
                   "sync_transaction_version": "216",
                   "type": "url",
                   "url": "http://ekkescorner.wordpress.com/blog-series/osgi-apps/"
@@ -879,7 +879,7 @@
                 {
                   "date_added": "13024053562528478",
                   "id": "232",
-                  "name": "btaz - GIT Fatal You Have not Concluded Your Merge MERGE_HEAD Exists",
+                  "name": "btaz » GIT Fatal You Have not Concluded Your Merge MERGE_HEAD Exists",
                   "sync_transaction_version": "216",
                   "type": "url",
                   "url": "http://www.btaz.com/scm/git/git-fatal-you-have-not-concluded-your-merge-merge_head-exists/"
@@ -1082,7 +1082,7 @@
                 {
                   "date_added": "13024053562753478",
                   "id": "257",
-                  "name": "Building with Tycho – part 1 (OSGi bundles) - Mattias Holmqvist – Writings about software development",
+                  "name": "Building with Tycho – part 1 (OSGi bundles) « Mattias Holmqvist – Writings about software development",
                   "sync_transaction_version": "216",
                   "type": "url",
                   "url": "http://mattiasholmqvist.se/2010/02/building-with-tycho-part-1-osgi-bundles/"
@@ -1286,7 +1286,7 @@
                     {
                       "date_added": "13024053564263478",
                       "id": "174",
-                      "name": "Maven Repository: org.cometd.java - cometd-java-common - 2.3.1",
+                      "name": "Maven Repository: org.cometd.java » cometd-java-common » 2.3.1",
                       "sync_transaction_version": "216",
                       "type": "url",
                       "url": "http://mvnrepository.com/artifact/org.cometd.java/cometd-java-common/2.3.1"
@@ -1481,7 +1481,7 @@
                   "meta_info": {
                     "last_visited_desktop": "13152307356676001"
                   },
-                  "name": "OSGi at REST - Miles To Code Before I Sleep",
+                  "name": "OSGi at REST « Miles To Code Before I Sleep",
                   "sync_transaction_version": "902",
                   "type": "url",
                   "url": "http://bryanhunt.wordpress.com/2011/06/30/osgi-at-rest/"
@@ -1542,7 +1542,7 @@
                 {
                   "date_added": "13024053563001478",
                   "id": "143",
-                  "name": "Restlet General - Noelios Technologies",
+                  "name": "Restlet General « Noelios Technologies",
                   "sync_transaction_version": "216",
                   "type": "url",
                   "url": "http://blog.noelios.com/category/rest/restlet/restlet-general/"

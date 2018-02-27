@@ -55,10 +55,11 @@ object BookmarkSchedulerService {
     //val jsonFile = "/Users/carsten/Library/Application Support/Google/Chrome/Default/Bookmarks"
     val jsonFile = "./Book"
 
-    val importFile: URL = bundleContext.getBundle().getResource("BookmarksSmaller")
+    val importFile: URL = bundleContext.getBundle().getResource("BookmarksWin")
 
+    val is = importFile.openConnection().getInputStream;
     //val content = Source.fromFile(jsonFile).getLines.mkString
-    val content = Source.fromInputStream(importFile.openConnection().getInputStream).mkString
+    val content = Source.fromInputStream(is, "UTF-8").mkString
     val parsed: JObject = parse(content).asInstanceOf[JObject]
 
     val roots: JObject = (parsed \\ "roots").asInstanceOf[JObject]

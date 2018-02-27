@@ -36,6 +36,7 @@ class BookmarksApplication(
   appModel.addEntity(classOf[HttpResource])
 
   BookmarkSchedulerService.checkBookmarks(system)
+  BookmarkSchedulerService.importBookmarks(this, bundleContext)(system)
 
   override def name = "bookmarks"
   override def desc = "Skysail Bookmarks Application"

@@ -1,34 +1,30 @@
 package io.skysail.server.app.bookmarks.resources
 
-import java.io.FileReader
-
-import org.json4s
+import io.skysail.server.app.bookmarks.domain.Bookmark
 import org.json4s._
 import org.json4s.native.JsonMethods._
 
 import scala.io.Source
 
 object Main extends App {
-  Console.println("Hello World!")
 
-  val jsonFile = "C:\\Users\\graefca\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Bookmarks"
-  for (line <- Source.fromFile(jsonFile).getLines) {
-    //    println(line)
-  }
+  //val jsonFile = "C:\\Users\\graefca\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Bookmarks"
+  val jsonFile = "/Users/carsten/Library/Application Support/Google/Chrome/Default/Bookmarks"
+
   val content = Source.fromFile(jsonFile).getLines.mkString
-
   val parsed: JObject = parse(content).asInstanceOf[JObject]
 
-  println(parsed \\ "checksum")
+  var counter = 0
+  //println(parsed \\ "checksum")
 
-  val children: JObject = (parsed \\ "roots").asInstanceOf[JObject]
+  val roots: JObject = (parsed \\ "roots").asInstanceOf[JObject]
 
-  println(children.values.keys)
+  println(roots.values.keys)
 
-  parseElements(Set("chromeImport"), children)
+  parseElements(Set("chromeImport"), roots)
 
   def parseElements(tags: Set[String], parent: JValue): Unit = {
-    println("Analysis of " + parent)
+    //println("Analysis of " + parent)
     parent match {
       case o: JObject => checkObject(tags, o)
       case a: JArray => checkArray(tags, a)
@@ -37,18 +33,28 @@ object Main extends App {
   }
 
   private def checkObject(tags: Set[String], parent: JObject): Unit = {
-    for (child <- parent.obj) {
-      val f = child.asInstanceOf[JField]
-      println("checkObject " + f)
-      val a: String = f._1
-      val b: _root_.org.json4s.JsonAST.JValue = f._2
-      parseElements(tags + a, b)
+    //println("typeO: " + parent \\ "type")
+
+    if ((parent \\ "type").isInstanceOf[JString]) {
+      counter += 1
+      println(s"URL(#$counter):  $parent")
+      val cm = Bookmark(None,"title", "url")
+
+    } else {
+      for (child <- parent.obj) {
+        val f = child.asInstanceOf[JField]
+        //println("checkObject " + f)
+        val a: String = f._1
+        val b: _root_.org.json4s.JsonAST.JValue = f._2
+        parseElements(tags + a, b)
+      }
     }
   }
 
   private def checkArray(tags: Set[String], parent: JArray): Unit = {
+    //println("typeA: " + parent \\ "type")
     for (child: JValue <- parent.arr) {
-      println("checkArray " + child)
+      //println("checkArray " + child)
       parseElements(tags, child)
     }
   }
@@ -86,9 +92,9 @@ object Main extends App {
           println("type3: " + t)
           println("unknown: " + child.getClass.getName)
         }
-        case _: Any => {
-          println("really unknown: " + child.getClass.getName)
-        }
+//        case _: Any => {
+//          println("really unknown: " + child.getClass.getName)
+//        }
       }
     }
 

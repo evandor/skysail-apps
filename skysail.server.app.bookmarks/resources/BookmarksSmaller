@@ -1,0 +1,117 @@
+{
+  "checksum": "bf601ca03e22142fcd9d5d6013736777",
+  "roots": {
+    "other": {
+      "children": [
+        {
+          "children": [
+            {
+              "date_added": "13024053561072478",
+              "id": "1102",
+              "meta_info": {
+                "last_visited_desktop": "13152307055209068"
+              },
+              "name": "Ugo Sangiorgi » Installing the Eclipse RCP Delta pack (for beginners)",
+              "sync_transaction_version": "821",
+              "type": "url",
+              "url": "http://ugosan.org/eclipse-rcp-delta-pack/"
+            },
+            {
+              "date_added": "13024053561268478",
+              "id": "20",
+              "meta_info": {
+                "last_visited_desktop": "13152307196960035"
+              },
+              "name": "Problem loading page",
+              "sync_transaction_version": "870",
+              "type": "url",
+              "url": "http://www.spiegel.de3/"
+            },
+            {
+              "date_added": "13024053561271478",
+              "id": "21",
+              "name": "Adobe aktualisiert den Farbwahl-Dienst Kuler | heise online",
+              "sync_transaction_version": "1542",
+              "type": "url",
+              "url": "http://www.heise.de/newsticker/meldung/Adobe-aktualisiert-den-Farbwahl-Dienst-Kuler-1874239.html"
+            },
+            {
+              "date_added": "13024053561069478",
+              "id": "1125",
+              "meta_info": {
+                "last_visited_desktop": "13152307071809067"
+              },
+              "name": "Use Firefox to spell check your website | Urbano's Blog",
+              "sync_transaction_version": "828",
+              "type": "url",
+              "url": "http://urbanoalvarez.es/blog/2008/09/14/use-firefox-to-spell-check-your-website/"
+            },
+            {
+              "date_added": "13024053561074478",
+              "id": "1123",
+              "meta_info": {
+                "last_visited_desktop": "13152307041521657"
+              },
+              "name": "Eclipse Project Downloads",
+              "sync_transaction_version": "812",
+              "type": "url",
+              "url": "http://download.eclipse.org/eclipse/downloads/"
+            },
+            {
+              "date_added": "13024053561077478",
+              "id": "1114",
+              "meta_info": {
+                "last_visited_desktop": "13152307030371302"
+              },
+              "name": "Αρχική σελίδα",
+              "sync_transaction_version": "801",
+              "type": "url",
+              "url": "https://ebill.wind.com.gr/ebpp/admin/login.html;jsessionid=1FCE79ADFCDCA2B7E53C3BD633A4206E.node1?lang=el"
+            }
+          ],
+          "date_added": "13024053561004478",
+          "date_modified": "13163618387691740",
+          "id": "19",
+          "name": "Unsorted Bookmarks",
+          "sync_transaction_version": "208",
+          "type": "folder"
+        },
+        {
+          "children": [],
+          "date_added": "13024053561008478",
+          "date_modified": "13038150383280498",
+          "id": "8",
+          "name": "Unsortierte Lesezeichen",
+          "sync_transaction_version": "208",
+          "type": "folder"
+        },
+        {
+          "date_added": "13024053561022478",
+          "id": "18",
+          "meta_info": {
+            "last_visited_desktop": "13152307157172999"
+          },
+          "name": "Argus AppConfig",
+          "sync_transaction_version": "851",
+          "type": "url",
+          "url": "http://dienste.kvb.svc.ig1.local/argus-server/info/appConfig"
+        }
+      ],
+      "date_added": "13038150301862889",
+      "date_modified": "13152207442553657",
+      "id": "2",
+      "name": "Other Bookmarks",
+      "type": "folder"
+    },
+    "sync_transaction_version": "1550",
+    "synced": {
+      "children": [],
+      "date_added": "13038150301862891",
+      "date_modified": "0",
+      "id": "3",
+      "name": "Mobile Bookmarks",
+      "type": "folder"
+    }
+  },
+  "version": 1
+}

@@ -6,12 +6,11 @@ import akka.actor.{ActorSelection, ActorSystem}
 import akka.http.scaladsl.model.HttpMethods
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
+import io.skysail.domain._
 import io.skysail.domain.messages.ProcessCommand
 import io.skysail.domain.resources.{EntityResource, PostResource, PutResource}
-import io.skysail.domain.{RedirectResponseEvent, RequestEvent, ResponseEvent, ResponseEventBase}
 import io.skysail.server.app.bookmarks.BookmarksApplication
-import io.skysail.server.app.bookmarks.domain.{Bookmark, BookmarkList, HttpResource}
-import io.skysail.server.app.bookmarks.services.BookmarksService
+import io.skysail.server.app.bookmarks.domain.{Bookmark, BookmarkList}
 
 class BookmarksResource extends EntityResource[BookmarksApplication, BookmarkList] {
   override def getEntity(re: RequestEvent) = Some(BookmarkList(getApplication().repo.find()))
@@ -25,12 +24,16 @@ class PostBookmarkResource extends PostResource[BookmarksApplication, Bookmark] 
 
   def post(requestEvent: RequestEvent)(implicit actorSystem: ActorSystem): ResponseEventBase = {
     var bookmark = requestEvent.cmd.entity.asInstanceOf[Bookmark]
-    val bmWithMetadata = BookmarksService.addMetadata(bookmark)
-    val b = getApplication().repo.save(bmWithMetadata)
+    //val bmWithMetadata = BookmarksService.addMetadata(bookmark)
+    val b = getApplication().repo.save(bookmark)
     // getApplication().eventService.send("bookmark created")
     val redirectTo = Some("/bookmarks/v1/bms")
-    val newRequest = requestEvent.cmd.ctx.request.copy(method = HttpMethods.GET)
-    RedirectResponseEvent(requestEvent, "", redirectTo)
+    if (requestEvent.cmd.ctx != null) {
+      val newRequest = requestEvent.cmd.ctx.request.copy(method = HttpMethods.GET)
+      RedirectResponseEvent(requestEvent, "", redirectTo)
+    } else {
+      AsyncResponseEvent(requestEvent)
+    }
   }
 
   override def createRoute(applicationActor: ActorSelection, processCommand: ProcessCommand)(implicit system: ActorSystem): Route = {

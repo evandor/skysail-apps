@@ -1,5 +1,5 @@
-userhome=file:/C:/Users/graefca
-#userhome=file://${user.home}
+#userhome=file:/C:/Users/graefca
+userhome=file://${user.home}
 
 # Configure Repositories
 -plugin.1.Local: \

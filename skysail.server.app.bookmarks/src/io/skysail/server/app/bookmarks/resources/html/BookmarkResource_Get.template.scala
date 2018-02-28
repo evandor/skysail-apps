@@ -38,7 +38,7 @@ Seq[Any](format.raw/*6.110*/("""
 
         <div class="form-group">
             <label for="title">Title</label>
-            <input type="text"  class="form-control-plaintext" id="title" name="title" aria-describedby="emailHelp" placeholder="(Optional) Title" value=""""),_display_(/*24.156*/bm/*24.158*/.title),format.raw/*24.164*/("""">
+            <input type="text" class="form-control-plaintext" id="title" name="title" aria-describedby="emailHelp" placeholder="(Optional) Title" value=""""),_display_(/*24.155*/bm/*24.157*/.title),format.raw/*24.163*/("""">
         </div>
         <div class="form-group">
             <label for="url">URL</label>
@@ -54,6 +54,8 @@ Seq[Any](format.raw/*6.110*/("""
 
     </div>
 </div>
+
+<div>"""),_display_(/*41.7*/bm),format.raw/*41.9*/("""</div>
 
 """)))}))
       }
@@ -71,11 +73,11 @@ Seq[Any](format.raw/*6.110*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Feb 19 13:59:41 CET 2018
-                  SOURCE: C:/git/skysail-apps/skysail.server.app.bookmarks/./src/io/skysail/server/app/bookmarks/resources/BookmarkResource_Get.scala.html
-                  HASH: 05e725cb1fb96fe76a4d1853c0f9292e4e1f9c5c
-                  MATRIX: 774->193|960->304|973->310|1067->328|1096->331|1157->301|1186->352|1215->355|1238->369|1278->371|1307->373|1467->506|1479->509|1523->532|1834->815|1846->817|1874->823|2015->937|2026->939|2051->943|2081->946|2092->948|2117->952|2352->1159|2364->1161|2394->1169|2496->1244|2507->1246|2535->1253
-                  LINES: 16->6|20->8|20->8|22->8|23->9|26->6|28->11|30->13|30->13|30->13|32->15|36->19|36->19|36->19|41->24|41->24|41->24|45->28|45->28|45->28|45->28|45->28|45->28|49->32|49->32|49->32|52->35|52->35|52->35
+                  DATE: Tue Feb 27 18:27:56 CET 2018
+                  SOURCE: /Users/carsten/git/skysail-apps/skysail.server.app.bookmarks/./src/io/skysail/server/app/bookmarks/resources/BookmarkResource_Get.scala.html
+                  HASH: d8a4f865dc02189583fa27ef95a25dd2995fa879
+                  MATRIX: 774->193|960->304|973->310|1067->328|1096->331|1157->301|1186->352|1215->355|1238->369|1278->371|1307->373|1467->506|1479->509|1523->532|1833->814|1845->816|1873->822|2014->936|2025->938|2050->942|2080->945|2091->947|2116->951|2351->1158|2363->1160|2393->1168|2495->1243|2506->1245|2534->1252|2615->1307|2637->1309
+                  LINES: 16->6|20->8|20->8|22->8|23->9|26->6|28->11|30->13|30->13|30->13|32->15|36->19|36->19|36->19|41->24|41->24|41->24|45->28|45->28|45->28|45->28|45->28|45->28|49->32|49->32|49->32|52->35|52->35|52->35|58->41|58->41
                   -- GENERATED --
               */
           

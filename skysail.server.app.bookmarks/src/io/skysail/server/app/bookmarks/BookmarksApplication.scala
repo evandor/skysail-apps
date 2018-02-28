@@ -9,14 +9,16 @@ import akka.http.scaladsl.server.{PathMatcher, Route}
 import io.skysail.api.persistence.DbService
 import io.skysail.domain.routes.RouteMapping
 import io.skysail.server.RoutesCreatorTrait
-import io.skysail.server.app.bookmarks.domain.HttpResource
+import io.skysail.server.app.bookmarks.domain.{Bookmark, HttpResource, State}
 import io.skysail.server.app.bookmarks.repository.BookmarksRepository
 import io.skysail.server.app.bookmarks.resources.{BookmarkResource, BookmarksResource, PostBookmarkResource, PutBookmarkResource}
 import io.skysail.server.app.bookmarks.services.{BookmarkSchedulerService, EventService}
 import io.skysail.server.app.{ApplicationProvider, BackendApplication}
+import org.json4s.{DefaultFormats, FieldSerializer}
 import org.osgi.framework.BundleContext
 import org.osgi.service.event.EventAdmin
-
+import org.json4s.{FieldSerializer, DefaultFormats}
+import org.json4s.native.Serialization.write
 import scala.concurrent.ExecutionContextExecutor
 
 class BookmarksApplication(
@@ -33,10 +35,14 @@ class BookmarksApplication(
 
   val repo = new BookmarksRepository(dbService, appModel)
 
+  val dfs = DefaultFormats// + FieldSerializer[Bookmark]
+  appModel.addEntity(classOf[Bookmark], dfs)
   appModel.addEntity(classOf[HttpResource])
+  //appModel.addEntity(io.skysail.server.app.bookmarks.domain.State.getClass)
+  appModel.addEntity(classOf[State])
 
   BookmarkSchedulerService.checkBookmarks(system)
-  BookmarkSchedulerService.importBookmarks(this, bundleContext)(system)
+  //BookmarkSchedulerService.importBookmarks(this, bundleContext)(system)
 
   override def name = "bookmarks"
   override def desc = "Skysail Bookmarks Application"

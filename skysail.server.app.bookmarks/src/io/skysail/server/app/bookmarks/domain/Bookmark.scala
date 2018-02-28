@@ -4,13 +4,11 @@ import java.time.Instant
 import io.skysail.api.ddd.Entity
 import io.skysail.api.ui._
 
-object State {
-  sealed trait EnumVal
-  case object NEW extends EnumVal
-  case object NOT_FOUND extends EnumVal
-  case object UNCHANGED extends EnumVal
-  case object CHANGED extends EnumVal
-}
+sealed trait State
+case object NEW extends State
+case object NOT_FOUND extends State
+case object UNCHANGED extends State
+case object CHANGED extends State
 
 case class Bookmark(
                      id: Option[String],
@@ -21,7 +19,7 @@ case class Bookmark(
                      created: Long = Instant.MIN.getEpochSecond,
                      clicked: Integer = 0,
                      root: HttpResource = null,
-                     state: Option[State.EnumVal] = Some(State.NEW)
+                     state: State = NEW
                    ) extends Entity[String] with Linkable {
 
   override val _links: List[Link] = List(

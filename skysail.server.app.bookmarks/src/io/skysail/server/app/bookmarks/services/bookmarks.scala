@@ -55,7 +55,7 @@ object BookmarkSchedulerService {
     //val jsonFile = "/Users/carsten/Library/Application Support/Google/Chrome/Default/Bookmarks"
     val jsonFile = "./Book"
 
-    val importFile: URL = bundleContext.getBundle().getResource("BookmarksWin")
+    val importFile: URL = bundleContext.getBundle().getResource("BookmarksSmall")
 
     val is = importFile.openConnection().getInputStream;
     //val content = Source.fromFile(jsonFile).getLines.mkString
@@ -117,8 +117,8 @@ object BookmarksService {
   private val log = LoggerFactory.getLogger(this.getClass)
 
   def addMetadata(bookmark: Bookmark) = {
-    val root = HttpResource(bookmark.url)
-    var bm = bookmark.copy(root = root)
+    //val root = HttpResource(bookmark.url)
+    var bm = bookmark//.copy(root = root)
 
     //.copy()
     val metadata = new JSoupAdapter().readFrom(bookmark.url).asInstanceOf[Try[Document]]

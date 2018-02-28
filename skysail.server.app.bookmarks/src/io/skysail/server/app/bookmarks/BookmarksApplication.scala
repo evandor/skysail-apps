@@ -14,18 +14,17 @@ import io.skysail.server.app.bookmarks.repository.BookmarksRepository
 import io.skysail.server.app.bookmarks.resources.{BookmarkResource, BookmarksResource, PostBookmarkResource, PutBookmarkResource}
 import io.skysail.server.app.bookmarks.services.{BookmarkSchedulerService, EventService}
 import io.skysail.server.app.{ApplicationProvider, BackendApplication}
+import org.osgi.service.event.EventAdmin
 import org.json4s.{DefaultFormats, FieldSerializer}
 import org.osgi.framework.BundleContext
-import org.osgi.service.event.EventAdmin
-import org.json4s.{FieldSerializer, DefaultFormats}
-import org.json4s.native.Serialization.write
+
 import scala.concurrent.ExecutionContextExecutor
 
 class BookmarksApplication(
-  bundleContext: BundleContext,
-  dbService: DbService,
-  system: ActorSystem,
-  routesCreator: RoutesCreatorTrait) extends BackendApplication(bundleContext, routesCreator, system) with ApplicationProvider {
+                            bundleContext: BundleContext,
+                            dbService: DbService,
+                            system: ActorSystem,
+                            routesCreator: RoutesCreatorTrait) extends BackendApplication(bundleContext, routesCreator, system) with ApplicationProvider {
 
   var eventService: EventService = new EventService(null)
 
@@ -35,8 +34,7 @@ class BookmarksApplication(
 
   val repo = new BookmarksRepository(dbService, appModel)
 
-  val dfs = DefaultFormats// + FieldSerializer[Bookmark]
-  appModel.addEntity(classOf[Bookmark], dfs)
+  appModel.addEntity(classOf[Bookmark], DefaultFormats + FieldSerializer[Bookmark]())
   appModel.addEntity(classOf[HttpResource])
   //appModel.addEntity(io.skysail.server.app.bookmarks.domain.State.getClass)
   appModel.addEntity(classOf[State])
@@ -45,6 +43,7 @@ class BookmarksApplication(
   //BookmarkSchedulerService.importBookmarks(this, bundleContext)(system)
 
   override def name = "bookmarks"
+
   override def desc = "Skysail Bookmarks Application"
 
   override def routesMappings = {

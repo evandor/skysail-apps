@@ -14,6 +14,7 @@ import io.skysail.server.app.bookmarks.repository.BookmarksRepository
 import io.skysail.server.app.bookmarks.resources.{BookmarkResource, BookmarksResource, PostBookmarkResource, PutBookmarkResource}
 import io.skysail.server.app.bookmarks.services.{BookmarkSchedulerService, EventService}
 import io.skysail.server.app.{ApplicationProvider, BackendApplication}
+import org.json4s.ext.EnumNameSerializer
 import org.osgi.service.event.EventAdmin
 import org.json4s.{DefaultFormats, FieldSerializer}
 import org.osgi.framework.BundleContext
@@ -34,10 +35,10 @@ class BookmarksApplication(
 
   val repo = new BookmarksRepository(dbService, appModel)
 
-  appModel.addEntity(classOf[Bookmark], DefaultFormats + FieldSerializer[Bookmark]())
+  appModel.addEntity(classOf[Bookmark],DefaultFormats + FieldSerializer[Bookmark]() + new EnumNameSerializer(State))
   appModel.addEntity(classOf[HttpResource])
   //appModel.addEntity(io.skysail.server.app.bookmarks.domain.State.getClass)
-  appModel.addEntity(classOf[State])
+  //appModel.addEntity(classOf[State])
 
   BookmarkSchedulerService.checkBookmarks(system)
   //BookmarkSchedulerService.importBookmarks(this, bundleContext)(system)

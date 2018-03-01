@@ -1,14 +1,14 @@
 package io.skysail.server.app.bookmarks.domain
 
 import java.time.Instant
+
 import io.skysail.api.ddd.Entity
 import io.skysail.api.ui._
 
-sealed trait State
-case object NEW extends State
-case object NOT_FOUND extends State
-case object UNCHANGED extends State
-case object CHANGED extends State
+
+object State extends Enumeration {
+  val NEW, Failed, Pending, Unknown = Value
+}
 
 case class Bookmark(
                      id: Option[String],
@@ -19,7 +19,7 @@ case class Bookmark(
                      created: Long = Instant.MIN.getEpochSecond,
                      clicked: Integer = 0,
                      root: HttpResource = null,
-                     state: State = NEW
+                     state: State.Value = State.NEW
                    ) extends Entity[String] with Linkable {
 
   override val _links: List[Link] = List(

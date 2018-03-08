@@ -1,0 +1,3 @@
+@Library('jenkins-library') _
+
+buildPipelineApps2 'skysail-apps'

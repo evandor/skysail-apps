@@ -16,19 +16,14 @@ class Activator extends DominoActivator {
   whenBundleActive {
 
     onStart {
-      println("Bundle started")
       //      logServiceTracker = new ServiceTracker(context, classOf[LogService].getName(), null);
       //logServiceTracker.open();
       //this.bundleContext = context;
       //osgiService = context.registerService(OsgiService.class, this, new Hashtable<>());
       //LogServiceUtils.info(logServiceTracker, "started activator " + this.getClass().getName());
-      
-
-
     }
 
     onStop {
-      println("Bundle stopped")
       //LogServiceUtils.info(logServiceTracker, "about to stop activator " + this.getClass().getName());
       //  this.bundleContext = null;
       //  osgiService = null;

@@ -67,7 +67,6 @@ object BookmarkSchedulerService {
   }
 
   def parseElements(tags: Set[String], parent: JValue, app: BookmarksApplication, appActor: ActorSelection): Unit = {
-    //println("Analysis of " + parent)
     parent match {
       case o: JObject => checkObject(tags, o, app, appActor)
       case a: JArray => checkArray(tags, a, app, appActor)
@@ -76,11 +75,8 @@ object BookmarkSchedulerService {
   }
 
   private def checkObject(tags: Set[String], parent: JObject, app: BookmarksApplication, appActor: ActorSelection): Unit = {
-    //println("typeO: " + parent \\ "type")
 
     if ((parent \\ "type").isInstanceOf[JString]) {
-      //counter += 1
-      println(s"URL:  $parent")
       val url = (parent \\ "url")
       if (url.isInstanceOf[JString]) {
         val bm = Bookmark(Some(UUID.randomUUID().toString), "", url.asInstanceOf[JString].s)
@@ -94,7 +90,6 @@ object BookmarkSchedulerService {
     } else {
       for (child <- parent.obj) {
         val f = child.asInstanceOf[JField]
-        //println("checkObject " + f)
         val a: String = f._1
         val b: _root_.org.json4s.JsonAST.JValue = f._2
         parseElements(tags + a, b, app, appActor)
@@ -103,9 +98,7 @@ object BookmarkSchedulerService {
   }
 
   private def checkArray(tags: Set[String], parent: JArray, app: BookmarksApplication, appActor: ActorSelection): Unit = {
-    //println("typeA: " + parent \\ "type")
     for (child: JValue <- parent.arr) {
-      //println("checkArray " + child)
       parseElements(tags, child, app, appActor)
     }
   }
@@ -132,7 +125,6 @@ object BookmarksService {
         bm = bm.copy(hash = generateHash(v))
 
         val links: Elements = v.select("a[href]")
-        //println ("links: " + links)
         import scala.collection.JavaConversions._
         for (link <- links) {
           print(" * a: <%s>  (%s)", link.attr("abs:href"), link.text)

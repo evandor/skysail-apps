@@ -15,14 +15,6 @@ class Activator extends DominoActivator {
 
   whenBundleActive {
 
-    onStart {
-      //println("Bundle started")
-    }
-
-    onStop {
-      //println("Bundle stopped")
-    }
-
     whenServicesPresent[RoutesCreatorTrait, ActorSystem] { (routesCreator, actorSystem) =>
       log info s"dbService available in ${this.getClass.getName}"
       app = new AppboardApplication(bundleContext, routesCreator, actorSystem)

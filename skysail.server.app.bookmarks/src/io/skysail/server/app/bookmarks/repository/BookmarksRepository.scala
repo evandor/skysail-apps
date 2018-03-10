@@ -1,7 +1,5 @@
 package io.skysail.server.app.bookmarks.repository
 
-import java.time.Instant
-
 import io.skysail.api.persistence.DbService
 import io.skysail.domain.model.ApplicationModel
 import io.skysail.server.app.bookmarks.domain.{Bookmark, HttpResource}
@@ -25,7 +23,6 @@ class BookmarksRepository (dbService: DbService, appModel: ApplicationModel) {
     //                        : "")
     //                + " " + limitClause(pagination);
     //pagination.setEntityCount(count(filter));
-    //println("executing sql " + sql)
     dbService.findGraphs(classOf[Bookmark], sql, appModel) //, filter.getParams());
   }
 

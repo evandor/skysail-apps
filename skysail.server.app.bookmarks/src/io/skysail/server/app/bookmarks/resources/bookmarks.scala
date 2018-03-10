@@ -83,9 +83,7 @@ class BookmarkResource extends EntityResource[BookmarksApplication, Bookmark] {
     //    if (bm.url.contains("$")) {
     //      val pattern = new Regex("\\$\\{(.*?)}")
     //      val matchList = (pattern findAllIn bm.url).toList
-    //      println((pattern findAllIn bm.url).mkString(","))
     //      val hits = matchList.map(hit => hit.substring(2, hit.length - 1)).map(hit => hit -> app.getList(hit))
-    //      println(hits)
     //      val variant1 = new Bookmark(None, "var", "1")
     //
     //      val lists = hits

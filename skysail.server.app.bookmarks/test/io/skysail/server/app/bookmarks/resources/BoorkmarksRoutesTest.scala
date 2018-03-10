@@ -58,7 +58,6 @@ class BoorkmarksRoutesTest() extends DemoApplicationTest {
 //        Thread.sleep(10)
 //        val loc = header("location")
 //        //val bm = parse(responseAs[String]).extract[Bookmark]
-//        println(loc.get.value()) // TODO wrong url, without id!
 //        Get(loc.get.value()) ~> router ~> check {
 //          status shouldBe OK
 //          contentType shouldBe `text/html(UTF-8)`
@@ -71,7 +70,6 @@ class BoorkmarksRoutesTest() extends DemoApplicationTest {
 //      create(Bookmark(None, "getOnPutResource", "url")) ~> check {
 //        Thread.sleep(10)
 //        val bm = parse(responseAs[String]).extract[Bookmark]
-//        println(bm)
 //        Get("${URL_ROOT}/bms/" + bm.id.get + "/").addHeader(applicationJsonAcceptHeader) ~> router ~> check {
 //          status shouldBe OK
 //          //contentType shouldBe `text/html(UTF-8)`

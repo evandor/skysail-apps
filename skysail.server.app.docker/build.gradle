@@ -1,0 +1,59 @@
+buildscript {
+    repositories {
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
+    }
+    dependencies {
+        classpath "com.moowork.gradle:gradle-node-plugin:1.2.0"
+        classpath "com.bmuschko:gradle-docker-plugin:3.0.11"
+        classpath "gradle.plugin.io.skysail.gradle:twirlosgi-gradle-plugin:${twirlosgi_gradle_plugin_version}"
+    }
+}
+
+apply plugin: 'scala'
+apply plugin: 'eclipse'
+apply plugin: 'io.skysail.twirl.osgi'
+
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+}
+
+dependencies {
+    compile "org.scala-lang:scala-library:${scala_version}"
+    compile "org.scala-lang:scala-reflect:${scala_version}"
+    //scoverage 'org.scoverage:scalac-scoverage-plugin_2.11:1.1.0', 'org.scoverage:scalac-scoverage-runtime_2.11:1.1.0'
+}
+
+sourceSets {
+    main {
+        scala {
+            srcDirs = ['src']
+        }
+    }
+    test {
+        scala {
+            srcDirs = ['test']
+        }
+    }
+}
+
+eclipse {
+    project {
+        buildCommand 'bndtools.core.bndbuilder'
+        natures 'bndtools.core.bndnature'
+    }
+    classpath {
+        defaultOutputDir = file('bin')
+        containers 'org.scala-ide.sdt.launching.SCALA_CONTAINER', 'aQute.bnd.classpath.container'
+        file {
+            whenMerged {
+                entries.removeAll { it.kind == 'lib' }
+            }
+        }
+    }
+}

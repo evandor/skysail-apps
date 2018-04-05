@@ -20,10 +20,10 @@ userhome=file:/C:/Users/graefca
 		pretty = true; \
 		local = ${build}/release
 
--plugin.4.SkysailServerWS: \
-    aQute.bnd.repository.osgi.OSGiRepository; \
-        name=SkysailServerWS; \
-        locations=${userhome}/.bnd/shared/skysail/index.xml.gz
+#-plugin.4.SkysailServerWS: \
+#    aQute.bnd.repository.osgi.OSGiRepository; \
+#        name=SkysailServerWS; \
+#        locations=${userhome}/.bnd/shared/skysail/index.xml.gz
       
 -plugin.5.SkysailServer: \
 	aQute.bnd.deployer.repository.FixedIndexedRepo; \

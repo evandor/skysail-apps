@@ -1,5 +1,322 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1522943516000" name="Local" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1522991174000" name="Local" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="com.github.docker-java"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" type="Version" value="3.0.14"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="osgi.content" value="646c1cf5b8f79ad9bfdf19530634b02c230c83d23fbeeff70a68f6b50b1cadbd"/>
+      <attribute name="url" value="com.github.docker-java/com.github.docker-java-3.0.14.jar"/>
+      <attribute name="size" type="Long" value="638309"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="osgi.wiring.bundle" value="com.github.docker-java"/>
+      <attribute name="bundle-version" type="Version" value="3.0.14"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="osgi.wiring.host" value="com.github.docker-java"/>
+      <attribute name="bundle-version" type="Version" value="3.0.14"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.github.dockerjava.api"/>
+      <attribute name="version" type="Version" value="3.0.14"/>
+      <attribute name="bundle-symbolic-name" value="com.github.docker-java"/>
+      <attribute name="bundle-version" type="Version" value="3.0.14"/>
+      <directive name="uses" value="com.github.dockerjava.api.command,com.github.dockerjava.api.exception,com.github.dockerjava.api.model,javax.annotation"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.github.dockerjava.api.async"/>
+      <attribute name="version" type="Version" value="3.0.14"/>
+      <attribute name="bundle-symbolic-name" value="com.github.docker-java"/>
+      <attribute name="bundle-version" type="Version" value="3.0.14"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.github.dockerjava.api.command"/>
+      <attribute name="version" type="Version" value="3.0.14"/>
+      <attribute name="bundle-symbolic-name" value="com.github.docker-java"/>
+      <attribute name="bundle-version" type="Version" value="3.0.14"/>
+      <directive name="uses" value="com.fasterxml.jackson.annotation,com.github.dockerjava.api.async,com.github.dockerjava.api.exception,com.github.dockerjava.api.model,com.github.dockerjava.core,javax.annotation"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.github.dockerjava.api.exception"/>
+      <attribute name="version" type="Version" value="3.0.14"/>
+      <attribute name="bundle-symbolic-name" value="com.github.docker-java"/>
+      <attribute name="bundle-version" type="Version" value="3.0.14"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.github.dockerjava.api.model"/>
+      <attribute name="version" type="Version" value="3.0.14"/>
+      <attribute name="bundle-symbolic-name" value="com.github.docker-java"/>
+      <attribute name="bundle-version" type="Version" value="3.0.14"/>
+      <directive name="uses" value="com.fasterxml.jackson.annotation,com.fasterxml.jackson.core,com.fasterxml.jackson.databind,com.fasterxml.jackson.databind.annotation,javax.annotation"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.github.dockerjava.core"/>
+      <attribute name="version" type="Version" value="3.0.14"/>
+      <attribute name="bundle-symbolic-name" value="com.github.docker-java"/>
+      <attribute name="bundle-version" type="Version" value="3.0.14"/>
+      <directive name="uses" value="com.fasterxml.jackson.core.type,com.fasterxml.jackson.databind.node,com.github.dockerjava.api,com.github.dockerjava.api.command,com.github.dockerjava.api.model,javax.annotation,javax.net.ssl,org.apache.commons.io.filefilter"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.github.dockerjava.core.async"/>
+      <attribute name="version" type="Version" value="3.0.14"/>
+      <attribute name="bundle-symbolic-name" value="com.github.docker-java"/>
+      <attribute name="bundle-version" type="Version" value="3.0.14"/>
+      <directive name="uses" value="com.github.dockerjava.api.async,javax.annotation"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.github.dockerjava.core.command"/>
+      <attribute name="version" type="Version" value="3.0.14"/>
+      <attribute name="bundle-symbolic-name" value="com.github.docker-java"/>
+      <attribute name="bundle-version" type="Version" value="3.0.14"/>
+      <directive name="uses" value="com.fasterxml.jackson.annotation,com.github.dockerjava.api.async,com.github.dockerjava.api.command,com.github.dockerjava.api.exception,com.github.dockerjava.api.model,com.github.dockerjava.core.async,javax.annotation"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.github.dockerjava.core.dockerfile"/>
+      <attribute name="version" type="Version" value="3.0.14"/>
+      <attribute name="bundle-symbolic-name" value="com.github.docker-java"/>
+      <attribute name="bundle-version" type="Version" value="3.0.14"/>
+      <directive name="uses" value="com.google.common.base"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.github.dockerjava.core.exception"/>
+      <attribute name="version" type="Version" value="3.0.14"/>
+      <attribute name="bundle-symbolic-name" value="com.github.docker-java"/>
+      <attribute name="bundle-version" type="Version" value="3.0.14"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="osgi.wiring.package" value="com.github.dockerjava.core.util"/>
+      <attribute name="version" type="Version" value="3.0.14"/>
+      <attribute name="bundle-symbolic-name" value="com.github.docker-java"/>
+      <attribute name="bundle-version" type="Version" value="3.0.14"/>
+      <directive name="uses" value="edu.umd.cs.findbugs.annotations,javax.annotation,org.apache.commons.compress.archivers.tar"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.fasterxml.jackson.annotation)(version&gt;=2.6.4))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.fasterxml.jackson.core)(version&gt;=2.6.4))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.fasterxml.jackson.core.type)(version&gt;=2.6.4))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.fasterxml.jackson.databind)(version&gt;=2.6.4))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.fasterxml.jackson.databind.annotation)(version&gt;=2.6.4))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.fasterxml.jackson.databind.node)(version&gt;=2.6.4))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.fasterxml.jackson.jaxrs.json)(version&gt;=2.6.4))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.google.common.base)(version&gt;=19.0.0)(!(version&gt;=20.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.google.common.collect)(version&gt;=19.0.0)(!(version&gt;=20.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.google.common.escape)(version&gt;=19.0.0)(!(version&gt;=20.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.google.common.io)(version&gt;=19.0.0)(!(version&gt;=20.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.google.common.net)(version&gt;=19.0.0)(!(version&gt;=20.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.google.common.util.concurrent)(version&gt;=19.0.0)(!(version&gt;=20.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=io.netty.bootstrap)(version&gt;=4.1.11)(!(version&gt;=4.2.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=io.netty.buffer)(version&gt;=4.1.11)(!(version&gt;=4.2.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=io.netty.channel)(version&gt;=4.1.11)(!(version&gt;=4.2.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=io.netty.channel.epoll)(version&gt;=4.1.11)(!(version&gt;=4.2.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=io.netty.channel.kqueue)(version&gt;=4.1.11)(!(version&gt;=4.2.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=io.netty.channel.nio)(version&gt;=4.1.11)(!(version&gt;=4.2.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=io.netty.channel.socket)(version&gt;=4.1.11)(!(version&gt;=4.2.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=io.netty.channel.socket.nio)(version&gt;=4.1.11)(!(version&gt;=4.2.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=io.netty.channel.unix)(version&gt;=4.1.11)(!(version&gt;=4.2.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=io.netty.handler.codec)(version&gt;=4.1.11)(!(version&gt;=4.2.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=io.netty.handler.codec.http)(version&gt;=4.1.11)(!(version&gt;=4.2.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=io.netty.handler.codec.json)(version&gt;=4.1.11)(!(version&gt;=4.2.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=io.netty.handler.logging)(version&gt;=4.1.11)(!(version&gt;=4.2.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=io.netty.handler.ssl)(version&gt;=4.1.11)(!(version&gt;=4.2.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=io.netty.handler.stream)(version&gt;=4.1.11)(!(version&gt;=4.2.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=io.netty.util)(version&gt;=4.1.11)(!(version&gt;=4.2.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=io.netty.util.concurrent)(version&gt;=4.1.11)(!(version&gt;=4.2.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.ws.rs)(version&gt;=2.0.0)(!(version&gt;=2.1.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.ws.rs.client)(version&gt;=2.0.0)(!(version&gt;=2.1.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.ws.rs.container)(version&gt;=2.0.0)(!(version&gt;=2.1.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.ws.rs.core)(version&gt;=2.0.0)(!(version&gt;=2.1.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.ws.rs.ext)(version&gt;=2.0.0)(!(version&gt;=2.1.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.commons.codec.binary)(version&gt;=1.10.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.commons.compress.archivers)(version&gt;=1.12.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.commons.compress.archivers.tar)(version&gt;=1.12.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.commons.compress.compressors.gzip)(version&gt;=1.12.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.commons.io)(version&gt;=2.5.0)(!(version&gt;=3.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.commons.io.filefilter)(version&gt;=2.5.0)(!(version&gt;=3.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.commons.lang)(version&gt;=2.6.0)(!(version&gt;=3.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.commons.lang.builder)(version&gt;=2.6.0)(!(version&gt;=3.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.http)(version&gt;=4.4.0)(!(version&gt;=4.6.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.http.annotation)(version&gt;=4.4.0)(!(version&gt;=4.6.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.http.client.config)(version&gt;=4.4.0)(!(version&gt;=4.6.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.http.config)(version&gt;=4.4.0)(!(version&gt;=4.6.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.http.conn)(version&gt;=4.4.0)(!(version&gt;=4.6.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.http.conn.socket)(version&gt;=4.4.0)(!(version&gt;=4.6.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.http.conn.ssl)(version&gt;=4.4.0)(!(version&gt;=4.6.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.http.impl.conn)(version&gt;=4.4.0)(!(version&gt;=4.6.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.http.impl.io)(version&gt;=4.4.0)(!(version&gt;=4.6.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.http.io)(version&gt;=4.4.0)(!(version&gt;=4.6.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.http.message)(version&gt;=4.4.0)(!(version&gt;=4.6.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.http.protocol)(version&gt;=4.4.0)(!(version&gt;=4.6.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.http.util)(version&gt;=4.4.0)(!(version&gt;=4.6.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.bouncycastle.asn1)(version&gt;=1.54.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.bouncycastle.asn1.pkcs)(version&gt;=1.54.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.bouncycastle.cert)(version&gt;=1.54.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.bouncycastle.cert.jcajce)(version&gt;=1.54.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.bouncycastle.jce.provider)(version&gt;=1.54.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.bouncycastle.openssl)(version&gt;=1.54.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.glassfish.jersey)(version&gt;=2.23.1)(!(version&gt;=2.24.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.glassfish.jersey.apache.connector)(version&gt;=2.23.1)(!(version&gt;=2.24.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.glassfish.jersey.client)(version&gt;=2.23.1)(!(version&gt;=2.24.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.glassfish.jersey.client.spi)(version&gt;=2.23.1)(!(version&gt;=2.24.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.newsclub.net.unix)(version&gt;=2.0.4)(!(version&gt;=2.1.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(version&gt;=1.7.0)(!(version&gt;=1.8.0)))"/>
+    </requirement>
+  </resource>
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="skysail.api"/>

@@ -10,15 +10,15 @@ class Activator extends DominoActivator {
 
   private var log = LoggerFactory.getLogger(this.getClass)
 
- // var app: OsgiApplication = _
+  var app: DockerApplication = _
   //var logServiceTracker: ServiceTracker[LogService,LogService] = _
 
   whenBundleActive {
 
     whenServicesPresent[RoutesCreatorTrait, ActorSystem] { (routesCreator, actorSystem) =>
       log info s"dbService available in ${this.getClass.getName}"
-      //app = new OsgiApplication(bundleContext, routesCreator, actorSystem)
-      //app.providesService[ApplicationProvider]
+      app = new DockerApplication(bundleContext, routesCreator, actorSystem)
+      app.providesService[ApplicationProvider]
     }
 
     //whenServicePresent[RepositoryAdmin] { repoAdmin =>

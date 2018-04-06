@@ -10,9 +10,9 @@ import org.osgi.framework.BundleContext
 
 class DockerApplication(bundleContext: BundleContext, routesCreator: RoutesCreatorTrait, system: ActorSystem) extends BackendApplication(bundleContext, routesCreator, system) with ApplicationProvider {
 
-  override def name = "osgi"
+  override def name = "docker"
 
-  override def desc = "Skysail OSGi Introspection Application"
+  override def desc = "Docker Introspection Application"
 
   override def routesMappings = {
     val root: PathMatcher[Unit] = PathMatcher(name) / PathMatcher("v1")

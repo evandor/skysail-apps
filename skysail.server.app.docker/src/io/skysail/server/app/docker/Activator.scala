@@ -16,7 +16,7 @@ class Activator extends DominoActivator {
   whenBundleActive {
 
     whenServicesPresent[RoutesCreatorTrait, ActorSystem] { (routesCreator, actorSystem) =>
-      log info s"dbService available in ${this.getClass.getName}"
+      //log info s"dbService available in ${this.getClass.getName}"
       app = new DockerApplication(bundleContext, routesCreator, actorSystem)
       app.providesService[ApplicationProvider]
     }

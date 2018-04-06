@@ -32,7 +32,7 @@ logback.configurationFile.path = config/local
 	osgi.identity;filter:='(&(osgi.identity=org.apache.httpcomponents.httpcore)(version>=4.4))',\
 	osgi.identity;filter:='(&(osgi.identity=org.apache.httpcomponents.httpclient)(version>=4.5))',\
 	osgi.identity;filter:='(osgi.identity=jul.to.slf4j)',\
-    osgi.identity;filter:='(&(osgi.identity=skysail.db.orientdb)(version>=0.1.4)(version<=0.1.5))',\
+    osgi.identity;filter:='(&(osgi.identity=skysail.db.orientdb)(version>=0.1.5)(version<=0.1.6))',\
 	osgi.identity;filter:='(osgi.identity=skysail.server.app.bookmarks)',\
 	osgi.identity;filter:='(&(osgi.identity=skysail.server.auth.none)(version>=0.1.1.201802202037))'
 
@@ -108,6 +108,6 @@ logback.configurationFile.path = config/local
 	slf4j.api;version='[1.7.25,1.7.26)'
 -runrepos: \
 	SkysailServer,\
-	SkysailServerWS,\
-	Workspace
+	Workspace,\
+	SkysailServerReleases
 -ignore-standalone: 

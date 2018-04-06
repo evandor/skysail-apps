@@ -3,6 +3,7 @@ package io.skysail.server.app.docker
 import akka.actor.ActorSystem
 import akka.http.scaladsl.server.PathMatcher
 import akka.http.scaladsl.server.PathMatchers._
+import com.github.dockerjava.core.DockerClientBuilder
 import io.skysail.domain.routes.RouteMapping
 import io.skysail.server.RoutesCreatorTrait
 import io.skysail.server.app.docker.domain.DockerProcessDescriptor

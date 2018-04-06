@@ -5,7 +5,8 @@ import akka.http.scaladsl.server.PathMatcher
 import akka.http.scaladsl.server.PathMatchers._
 import io.skysail.domain.routes.RouteMapping
 import io.skysail.server.RoutesCreatorTrait
-import io.skysail.server.app.{ ApplicationProvider, BackendApplication }
+import io.skysail.server.app.docker.domain.DockerProcessDescriptor
+import io.skysail.server.app.{ApplicationProvider, BackendApplication}
 import org.osgi.framework.BundleContext
 
 class DockerApplication(bundleContext: BundleContext, routesCreator: RoutesCreatorTrait, system: ActorSystem) extends BackendApplication(bundleContext, routesCreator, system) with ApplicationProvider {
@@ -13,6 +14,8 @@ class DockerApplication(bundleContext: BundleContext, routesCreator: RoutesCreat
   override def name = "docker"
 
   override def desc = "Docker Introspection Application"
+
+  val dockerClient = DockerClientBuilder.getInstance().build()
 
   override def routesMappings = {
     val root: PathMatcher[Unit] = PathMatcher(name) / PathMatcher("v1")

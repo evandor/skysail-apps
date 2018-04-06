@@ -1,4 +1,4 @@
-package io.skysail.server.app.docker
+package io.skysail.server.app.docker.domain
 
 import org.osgi.framework.Bundle
 

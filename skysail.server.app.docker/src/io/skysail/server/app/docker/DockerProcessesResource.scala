@@ -3,6 +3,7 @@ package io.skysail.server.app.docker
 import akka.actor.ActorSystem
 import io.skysail.domain.resources.EntityResource
 import io.skysail.domain.{RequestEvent, ResponseEventBase}
+import io.skysail.server.app.docker.domain.DockerProcessDescriptorList
 
 class DockerProcessesResource extends EntityResource[DockerApplication, DockerProcessDescriptorList] {
 

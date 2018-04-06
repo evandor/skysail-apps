@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<repository increment="1522994374000" name="Release" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1522994416000" name="Release" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="skysail.server.app.appboard"/>
@@ -349,21 +349,21 @@
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="skysail.server.app.osgi"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" type="Version" value="0.1.1.201804051223"/>
+      <attribute name="version" type="Version" value="0.1.1.201804060600"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="osgi.content" value="49b117514d5cd7f64d60455ea25d3250c750db15148ea4ce95fe44ecdb355b67"/>
+      <attribute name="osgi.content" value="a9977608396dfea68069d237c2e1f8b773d2766483a80e09138ca54964aaed12"/>
       <attribute name="url" value="skysail.server.app.osgi/skysail.server.app.osgi-0.1.1.jar"/>
-      <attribute name="size" type="Long" value="29237"/>
+      <attribute name="size" type="Long" value="29236"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="osgi.wiring.bundle" value="skysail.server.app.osgi"/>
-      <attribute name="bundle-version" type="Version" value="0.1.1.201804051223"/>
+      <attribute name="bundle-version" type="Version" value="0.1.1.201804060600"/>
     </capability>
     <capability namespace="osgi.wiring.host">
       <attribute name="osgi.wiring.host" value="skysail.server.app.osgi"/>
-      <attribute name="bundle-version" type="Version" value="0.1.1.201804051223"/>
+      <attribute name="bundle-version" type="Version" value="0.1.1.201804060600"/>
     </capability>
     <requirement namespace="osgi.wiring.package">
       <directive name="filter" value="(&amp;(osgi.wiring.package=akka.actor)(version&gt;=2.5.0)(!(version&gt;=3.0.0)))"/>

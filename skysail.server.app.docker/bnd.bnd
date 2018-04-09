@@ -1,4 +1,4 @@
-Bundle-Name: SKYSAIL :: server :: app :: docker
+    Bundle-Name: SKYSAIL :: server :: app :: docker
 
 Bundle-Version: 0.1.0.${tstamp}
 
@@ -12,6 +12,8 @@ Bundle-Activator: io.skysail.server.app.docker.Activator
 #-includeresource: resources
 
 -buildpath: \
+    libs/javax.inject-1.0.0.jar;version=file,\
+    libs/junixsocket-common-2.0.4.jar;version=file,\
 	osgi.core;version=${osgi.version},\
 	osgi.enterprise;version=5.0,\
 	osgi.annotation;version=${osgi.annotation.version},\
@@ -49,4 +51,13 @@ Bundle-Activator: io.skysail.server.app.docker.Activator
 	com.github.docker-java;version=3.0
 	
 Private-Package: \
-    io.skysail.server.app.docker
+    io.skysail.server.app.docker,\
+    io.skysail.server.app.docker.domain
+
+Import-Package: \
+	!org.glassfish.jersey.*,\
+	*
+	
+Export-Package: \
+    javax.inject.*;version=1.0.0,\
+    org.newsclub.net.unix.*

@@ -39,7 +39,8 @@ logback.configurationFile.path = config
 	osgi.identity;filter:='(&(osgi.identity=org.apache.httpcomponents.httpcore)(version>=4.4))',\
 	osgi.identity;filter:='(&(osgi.identity=org.apache.httpcomponents.httpclient)(version>=4.5))',\
 	osgi.identity;filter:='(&(osgi.identity=skysail.server.auth.none)(version>=0.1.0.201711031636))',\
-	osgi.identity;filter:='(osgi.identity=skysail.server.app.docker)'
+	osgi.identity;filter:='(osgi.identity=skysail.server.app.docker)',\
+	osgi.identity;filter:='(&(osgi.identity=skysail.db.orientdb)(version>=0.1.5))'
 
 -runbundles: \
 	ch.qos.logback.classic;version='[1.2.3,1.2.4)',\
@@ -86,4 +87,33 @@ logback.configurationFile.path = config
 	skysail.server.app.docker;version=snapshot,\
 	skysail.server.auth.none;version='[0.1.1,0.1.2)',\
 	slf4j.api;version='[1.7.25,1.7.26)',\
-	webconsole.all;version='[0.2.0,0.2.1)'
+	webconsole.all;version='[0.2.0,0.2.1)',\
+	bcpkix;version='[1.54.0,1.54.1)',\
+	bcprov;version='[1.54.0,1.54.1)',\
+	com.fasterxml.jackson.jaxrs.jackson-jaxrs-base;version='[2.9.5,2.9.6)',\
+	com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider;version='[2.9.5,2.9.6)',\
+	com.github.docker-java;version='[3.0.14,3.0.15)',\
+	com.google.guava;version='[19.0.0,19.0.1)',\
+	com.googlecode.concurrentlinkedhashmap.lru;version='[1.4.0,1.4.1)',\
+	com.sun.jna;version='[4.2.0,4.2.1)',\
+	io.skysail.bundled.orientdb-uber;version='[2.1.3,2.1.4)',\
+	javassist;version='[3.18.1,3.18.2)',\
+	javax.annotation-api;version='[1.2.0,1.2.1)',\
+	javax.persistence;version='[2.1.0,2.1.1)',\
+	javax.ws.rs-api;version='[2.0.1,2.0.2)',\
+	org.apache.commons.codec;version='[1.10.0,1.10.1)',\
+	org.apache.commons.compress;version='[1.16.1,1.16.2)',\
+	org.apache.commons.configuration;version='[1.10.0,1.10.1)',\
+	org.apache.commons.io;version='[2.6.0,2.6.1)',\
+	org.apache.commons.lang;version='[2.6.0,2.6.1)',\
+	org.codehaus.jettison.jettison;version='[1.3.7,1.3.8)',\
+	org.glassfish.hk2.api;version='[2.4.0,2.4.1)',\
+	org.glassfish.hk2.external.aopalliance-repackaged;version='[2.4.0,2.4.1)',\
+	org.glassfish.hk2.osgi-resource-locator;version='[1.0.1,1.0.2)',\
+	org.glassfish.hk2.utils;version='[2.4.0,2.4.1)',\
+	org.glassfish.jersey.bundles.repackaged.jersey-guava;version='[2.23.2,2.23.3)',\
+	org.glassfish.jersey.connectors.jersey-apache-connector;version='[2.23.1,2.23.2)',\
+	org.glassfish.jersey.core.jersey-client;version='[2.23.1,2.23.2)',\
+	org.glassfish.jersey.core.jersey-common;version='[2.23.1,2.23.2)',\
+	org.xerial.snappy.snappy-java;version='[1.1.1,1.1.2)',\
+	skysail.db.orientdb;version='[0.1.5,0.1.6)'
